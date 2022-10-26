@@ -15,4 +15,4 @@ cat $url/report/assets.txt | grep $1 >> $url/report/domains.txt
 rm $url/report/assets.txt
 
 
-cat $url/report/domains.txt | sort -u | httprobe -s -p https:443 | sed 's/https\?:\/\///' | tr -d ':443'
+cat $url/report/domains.txt | sort -u | httprobe -s -p https:443 | sed 's/https\?:\/\///' | tr -d ':443' >> $url/report/alive.txt
